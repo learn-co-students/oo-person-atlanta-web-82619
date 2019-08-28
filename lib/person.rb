@@ -1,16 +1,16 @@
 class Person
 
-  attr_reader :name
+   attr_reader :name
   attr_accessor :bank_account, :happiness, :hygiene
 
-  def initialize(name)
+   def initialize(name)
     @name = name
     @bank_account = 25
     @hygiene = 8
     @happiness = 8
   end
 
-  # Why
+   # Why
   def happiness=(happiness)
     @happiness = happiness
     if self.happiness > 10
@@ -20,7 +20,7 @@ class Person
     end
   end
 
-  def hygiene=(hygiene)
+   def hygiene=(hygiene)
     @hygiene = hygiene
     if self.hygiene > 10
       @hygiene = 10
@@ -29,27 +29,27 @@ class Person
     end # why doesn't this work: else @hygiene = hygiene
   end
 
-  def happy?
+   def happy?
     if self.happiness > 7
       true
     else false
     end
   end
 
-  def clean?
+   def clean?
     if self.hygiene > 7
       true
     else false
     end
   end
 
-  def get_paid(salary)
+   def get_paid(salary)
     @salary = salary
     @bank_account += @salary
     return "all about the benjamins"
   end
 
-  def take_bath
+   def take_bath
     self.hygiene += 4
     if self.hygiene > 10
       self.hygiene = 10
@@ -57,19 +57,19 @@ class Person
     return "♪ Rub-a-dub just relaxing in the tub ♫"
   end
 
-  def work_out
+   def work_out
     self.hygiene -= 3
     self.happiness += 2
     return "♪ another one bites the dust ♫"
   end
 
-  def call_friend(person) # What happens if there are 3 people?
+   def call_friend(person) # What happens if there are 3 people?
     self.happiness += 3
     person.happiness += 3
     return "Hi #{person.name}! It's #{self.name}. How are you?" # Forgot .name
   end
 
-  def start_conversation(friend, topic)
+   def start_conversation(friend, topic)
     if topic == "politics"
       self.happiness -= 2
       friend.happiness -= 2
@@ -82,4 +82,4 @@ class Person
     end
   end
 
-end
+ end
